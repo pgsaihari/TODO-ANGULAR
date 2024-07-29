@@ -1,0 +1,35 @@
+<div class="main">
+    <h1>{{ componentTitle }}</h1>
+    <h2>What would you like to do today?</h2>
+  
+    
+  
+    <input
+      #newItem
+      placeholder="add an item"
+      (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+      class="lg-text-input"
+      id="addItemInput"
+    />
+  
+    <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
+  
+    <div class="filters">
+      <button (click)="filter = 'all'">All</button>
+      <button (click)="filter = 'active'">Active</button>
+      <button (click)="filter = 'done'">Completed</button>
+    </div>
+  
+    <ul>
+        @for (item of items; track $index) {
+            <li>
+            <span [class.completed]="item.done" (click)="toggleItemCompletion(item)">
+                {{ item.description }}
+              </span>
+              <button (click)="deleteItem(item)">Delete</button>
+            </li>
+        }
+       
+    </ul>
+  </div>
+  

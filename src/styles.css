@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Ensure no scrollbars appear */
+    position: relative;
+    height: 100vh; /* Ensure body takes full height */
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://img.freepik.com/free-photo/top-view-creepy-halloween-concept-with-bats_23-2148639174.jpg?t=st=1722236921~exp=1722240521~hmac=0e29781de35d3b955df21011c85b0edb5d4f328ee13e8c7844e046e1c6e35e4b&w=996') no-repeat center center fixed; /* Replace with your image URL */
+    background-size: cover;
+    z-index: -1;
+    filter: brightness(50%); /* Darken the image */
+  }
